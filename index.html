@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProcureSignal SA | Procurement Intelligence for South African SMEs</title>
+  <meta name="description" content="ProcureSignal SA helps South African SMEs prioritize public-sector opportunities using opportunity-fit scoring, buyer intelligence, and source-quality verification flags." />
+  <style>
+    :root {
+      --ink: #07152f;
+      --muted: #63718a;
+      --navy: #020b1f;
+      --blue: #1557ff;
+      --cyan: #0cc7e8;
+      --teal: #10bfa4;
+      --green: #39e29d;
+      --line: rgba(21, 44, 80, 0.12);
+      --glass: rgba(255,255,255,.72);
+      --shadow: 0 24px 80px rgba(3, 27, 62, .12);
+      --soft-shadow: 0 14px 42px rgba(3, 27, 62, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(12,199,232,.20), transparent 28%),
+        radial-gradient(circle at 88% 3%, rgba(21,87,255,.16), transparent 26%),
+        radial-gradient(circle at 80% 56%, rgba(57,226,157,.14), transparent 32%),
+        linear-gradient(180deg, #f7fbff 0%, #ffffff 52%, #eef8ff 100%);
+      overflow-x: hidden;
+    }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(247,251,255,.74);
+      border-bottom: 1px solid rgba(21,44,80,.08);
+    }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+    .logo-mark {
+      width: 46px; height: 46px; border-radius: 16px; display: grid; place-items: center;
+      background: radial-gradient(circle at 80% 20%, rgba(12,199,232,.9), transparent 18%), linear-gradient(135deg,#062555 0%,#1557ff 52%,#10bfa4 100%);
+      box-shadow: 0 14px 30px rgba(21,87,255,.23);
+    }
+    .logo-mark svg { width: 32px; height: 32px; filter: drop-shadow(0 7px 11px rgba(0,0,0,.18)); }
+    .logo-word { font-weight: 950; letter-spacing: -.055em; font-size: 1.24rem; }
+    .logo-word span { color: var(--cyan); }
+    .logo-word small { font-size: .65rem; letter-spacing: .06em; margin-left: 4px; color: #173457; }
+    .navlinks { display: flex; gap: 28px; color: #173457; font-size: .92rem; }
+    .navlinks a { text-decoration: none; opacity: .74; }
+    .navlinks a:hover { opacity: 1; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      border-radius: 999px; padding: 13px 19px; border: 1px solid transparent;
+      font-weight: 850; text-decoration: none; letter-spacing: -.01em; white-space: nowrap;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #fff; background: linear-gradient(135deg, var(--blue), var(--cyan) 64%, var(--teal)); box-shadow: 0 18px 42px rgba(21,87,255,.24); }
+    .btn-ghost { color: var(--ink); background: rgba(255,255,255,.78); border-color: rgba(21,44,80,.14); box-shadow: 0 12px 26px rgba(3,27,62,.06); }
+    .hero { position: relative; padding: 74px 0 42px; }
+    .hero::before {
+      content: ""; position: absolute; width: 560px; height: 560px; border-radius: 50%;
+      top: -170px; right: -210px; background: radial-gradient(circle, rgba(12,199,232,.23), transparent 68%); z-index: -1;
+    }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,.93fr) minmax(420px,1.07fr); gap: 46px; align-items: center; }
+    .eyebrow {
+      width: fit-content; display: inline-flex; gap: 9px; align-items: center; padding: 8px 12px;
+      border-radius: 999px; background: rgba(255,255,255,.78); border: 1px solid rgba(16,191,164,.22);
+      color: #0f6f64; font-weight: 900; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase;
+      box-shadow: 0 10px 24px rgba(3,27,62,.05); margin-bottom: 20px;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 99px; background: var(--teal); box-shadow: 0 0 0 6px rgba(16,191,164,.13); }
+    h1 { margin: 0; font-size: clamp(3rem, 7vw, 6.7rem); line-height: .93; letter-spacing: -.085em; }
+    .grad-text { background: linear-gradient(90deg, var(--blue), var(--cyan), var(--teal)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { max-width: 650px; color: var(--muted); font-size: clamp(1.05rem,1.8vw,1.28rem); margin: 26px 0 0; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+    .trust-row { margin-top: 26px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .trust-pill { display: inline-flex; align-items: center; gap: 7px; padding: 8px 10px; border-radius: 999px; border: 1px solid rgba(21,44,80,.10); background: rgba(255,255,255,.65); color: var(--muted); font-size: .82rem; font-weight: 750; }
+    .dashboard-shell {
+      position: relative; min-height: 600px; border-radius: 34px; border: 1px solid rgba(21,44,80,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.6)), radial-gradient(circle at 20% 10%, rgba(12,199,232,.16), transparent 30%);
+      box-shadow: var(--shadow); padding: 18px; overflow: hidden;
+    }
+    .dashboard-shell::before { content: ""; position: absolute; inset: -1px; background: linear-gradient(120deg, transparent 0%, rgba(12,199,232,.22) 36%, transparent 70%); pointer-events: none; }
+    .dashboard { position: relative; z-index: 1; display: grid; grid-template-columns: 112px 1fr; gap: 18px; height: 100%; }
+    .sidebar { min-height: 560px; border-radius: 24px; padding: 18px 12px; color: rgba(255,255,255,.78); background: radial-gradient(circle at 50% 0%, rgba(12,199,232,.28), transparent 34%), linear-gradient(180deg,#041a3e,#020b1f); }
+    .side-logo { width: 43px; height: 43px; margin: 0 auto 22px; border-radius: 15px; background: linear-gradient(135deg,var(--blue),var(--cyan)); display: grid; place-items: center; font-weight: 950; color: #fff; }
+    .side-item { border-radius: 12px; padding: 10px 8px; font-size: .76rem; margin-bottom: 6px; }
+    .side-item.active { background: rgba(21,87,255,.95); color: #fff; box-shadow: 0 10px 22px rgba(21,87,255,.25); }
+    .dash-main { padding: 8px 2px 0; }
+    .dash-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+    .dash-title { font-size: 1.1rem; font-weight: 950; letter-spacing: -.03em; }
+    .dash-sub { color: var(--muted); font-size: .78rem; }
+    .avatar { width: 34px; height: 34px; border-radius: 999px; background: linear-gradient(135deg,#eaf8ff,#fff); border: 1px solid rgba(21,44,80,.12); display: grid; place-items: center; font-weight: 950; color: var(--blue); font-size: .78rem; }
+    .metrics { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; margin-bottom: 12px; }
+    .metric, .panel { background: rgba(255,255,255,.8); border: 1px solid rgba(21,44,80,.10); border-radius: 18px; box-shadow: 0 10px 24px rgba(3,27,62,.04); }
+    .metric { padding: 14px; }
+    .metric-label { color: var(--muted); font-size: .68rem; font-weight: 850; }
+    .metric-value { margin-top: 6px; font-size: 1.38rem; font-weight: 950; letter-spacing: -.05em; }
+    .metric-change { color: #049c72; font-weight: 850; font-size: .67rem; }
+    .panel-grid { display: grid; grid-template-columns: 1.1fr .92fr .92fr; gap: 12px; margin-bottom: 12px; }
+    .panel { padding: 16px; min-height: 176px; }
+    .panel h3 { margin: 0 0 2px; font-size: .88rem; letter-spacing: -.02em; }
+    .panel p { margin: 0; color: var(--muted); font-size: .7rem; }
+    .gauge-wrap { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
+    .gauge { width: 92px; height: 92px; border-radius: 50%; background: conic-gradient(var(--blue) 0 71%, rgba(21,44,80,.08) 71% 100%); display: grid; place-items: center; position: relative; }
+    .gauge::after { content: ""; width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,.96); position: absolute; }
+    .gauge span { position: relative; z-index: 1; font-weight: 950; color: var(--ink); font-size: 1.08rem; }
+    .mini-list { display: grid; gap: 7px; margin-top: 14px; color: var(--muted); font-size: .72rem; }
+    .mini-list div { display: flex; justify-content: space-between; gap: 10px; }
+    .checklist { margin-top: 14px; display: grid; gap: 8px; font-size: .72rem; color: var(--muted); }
+    .checklist span::before { content: "✓"; color: #049c72; font-weight: 950; margin-right: 6px; }
+    .chart-panel { padding: 18px; min-height: 176px; }
+    .chart { height: 88px; margin-top: 20px; border-radius: 16px; background: linear-gradient(180deg, rgba(12,199,232,.14), rgba(255,255,255,0)), repeating-linear-gradient(90deg, transparent, transparent 62px, rgba(21,44,80,.06) 63px); position: relative; overflow: hidden; }
+    .chart svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .section { padding: 70px 0; }
+    .center { text-align: center; }
+    h2 { margin: 0; font-size: clamp(2rem,4.4vw,4rem); letter-spacing: -.07em; line-height: 1; }
+    .section-intro { margin: 18px auto 0; max-width: 780px; color: var(--muted); font-size: 1.05rem; }
+    .cards-3, .how { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; margin-top: 34px; }
+    .feature-card, .step-card { position: relative; padding: 26px; border-radius: 26px; background: rgba(255,255,255,.72); border: 1px solid rgba(21,44,80,.10); box-shadow: var(--soft-shadow); overflow: hidden; text-align: left; }
+    .feature-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 20% 5%, rgba(12,199,232,.16), transparent 38%); pointer-events: none; }
+    .icon-bubble { width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; background: linear-gradient(135deg,rgba(21,87,255,.12),rgba(12,199,232,.18)); color: var(--blue); font-size: 1.45rem; margin-bottom: 24px; }
+    .feature-card h3, .step-card h3 { margin: 0 0 10px; font-size: 1.18rem; letter-spacing: -.035em; }
+    .feature-card p, .step-card p { color: var(--muted); margin: 0; }
+    .step-card::before { counter-increment: steps; content: counter(steps); width: 38px; height: 38px; border-radius: 999px; display: grid; place-items: center; color: #fff; font-weight: 950; background: linear-gradient(135deg,var(--blue),var(--cyan)); margin-bottom: 22px; }
+    .how { counter-reset: steps; }
+    .trust-strip { margin-top: 34px; padding: 28px; border-radius: 30px; color: #fff; background: radial-gradient(circle at 20% 0%, rgba(12,199,232,.28), transparent 34%), linear-gradient(135deg,#02102b 0%,#062657 55%,#03152f 100%); display: grid; grid-template-columns: 64px 1fr auto; gap: 20px; align-items: center; box-shadow: var(--shadow); text-align: left; }
+    .shield { width: 64px; height: 64px; border-radius: 22px; display: grid; place-items: center; background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.16); font-size: 1.7rem; }
+    .trust-strip h3 { margin: 0 0 6px; letter-spacing: -.035em; }
+    .trust-strip p { margin: 0; color: rgba(255,255,255,.72); }
+    .cta-section { padding: 34px 0 90px; }
+    .cta-box { position: relative; overflow: hidden; padding: 46px; border-radius: 34px; background: radial-gradient(circle at 88% 18%, rgba(57,226,157,.22), transparent 26%), radial-gradient(circle at 12% 20%, rgba(12,199,232,.22), transparent 30%), linear-gradient(135deg,rgba(255,255,255,.92),rgba(255,255,255,.66)); border: 1px solid rgba(21,44,80,.12); box-shadow: var(--shadow); }
+    footer { color: rgba(255,255,255,.76); background: #020b1f; padding: 44px 0; }
+    .footer-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: start; }
+    .footer-disclaimer { color: rgba(255,255,255,.58); font-size: .9rem; }
+    @media (max-width: 980px) {
+      .hero-grid, .cards-3, .how, .footer-grid, .trust-strip { grid-template-columns: 1fr; }
+      .dashboard { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .metrics, .panel-grid { grid-template-columns: 1fr 1fr; }
+      .dashboard-shell { min-height: auto; }
+      .navlinks { display: none; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 26px,1180px); }
+      .hero { padding-top: 44px; }
+      .metrics, .panel-grid { grid-template-columns: 1fr; }
+      .cta-box { padding: 28px; }
+      h1 { font-size: clamp(2.8rem,17vw,4.2rem); }
+      .btn { width: 100%; }
+      .hero-actions { width: 100%; }
+      .trust-strip { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="logo" href="#">
+        <div class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none"><path d="M12 42L24 30L34 39L52 18" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 21C22 11 37 9 48 17" stroke="white" stroke-opacity=".78" stroke-width="4" stroke-linecap="round"/><path d="M17 49C29 57 45 53 53 41" stroke="white" stroke-opacity=".55" stroke-width="4" stroke-linecap="round"/><circle cx="12" cy="42" r="4" fill="white"/><circle cx="24" cy="30" r="4" fill="white"/><circle cx="34" cy="39" r="4" fill="white"/></svg>
+        </div>
+        <div class="logo-word">Procure<span>Signal</span><small>SA</small></div>
+      </a>
+      <nav class="navlinks" aria-label="Primary navigation"><a href="#features">Features</a><a href="#how">How it works</a><a href="#trust">Trust</a></nav>
+      <a class="btn btn-primary" href="https://forms.office.com/r/t58qW2mKuR" target="_blank" rel="noopener">Request sample fit profile</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> South Africa-first procurement intelligence</div>
+          <h1>Procurement intelligence for <span class="grad-text">South African SMEs</span></h1>
+          <p class="lead">ProcureSignal SA helps businesses prioritize the right public-sector opportunities using opportunity-fit scoring, buyer intelligence, and source-quality verification flags.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="https://forms.office.com/r/t58qW2mKuR" target="_blank" rel="noopener">Request a sample opportunity-fit profile →</a><a class="btn btn-ghost" href="#how">See how it works</a></div>
+          <div class="trust-row"><span class="trust-pill">◇ Independent</span><span class="trust-pill">◇ Source-aware</span><span class="trust-pill">◇ Built for SA public-sector workflows</span></div>
+        </div>
+
+        <div class="dashboard-shell" aria-label="ProcureSignal SA prototype dashboard preview">
+          <div class="dashboard">
+            <aside class="sidebar"><div class="side-logo">PS</div><div class="side-item active">Dashboard</div><div class="side-item">Opportunities</div><div class="side-item">Shortlist</div><div class="side-item">Buyers</div><div class="side-item">Verification</div><div class="side-item">Reports</div></aside>
+            <section class="dash-main">
+              <div class="dash-head"><div><div class="dash-title">Opportunity landscape</div><div class="dash-sub">Prototype preview for early-access feedback</div></div><div class="avatar">SA</div></div>
+              <div class="metrics"><div class="metric"><div class="metric-label">OPPORTUNITIES</div><div class="metric-value">10</div><div class="metric-change">month sample</div></div><div class="metric"><div class="metric-label">BUYERS</div><div class="metric-value">6</div><div class="metric-change">detected</div></div><div class="metric"><div class="metric-label">LIVE</div><div class="metric-value">4</div><div class="metric-change">actionable</div></div><div class="metric"><div class="metric-label">FLAGS</div><div class="metric-value">4</div><div class="metric-change">mixed status</div></div></div>
+              <div class="panel-grid">
+                <div class="panel"><h3>Opportunity-fit score</h3><p>How well this opportunity matches a business profile</p><div class="gauge-wrap"><div class="gauge"><span>87%</span></div><div class="mini-list"><div><span>Category match</span><strong>25%</strong></div><div><span>Location match</span><strong>20%</strong></div><div><span>Deadline fit</span><strong>15%</strong></div><div><span>Source signal</span><strong>10%</strong></div></div></div></div>
+                <div class="panel"><h3>Buyer intelligence</h3><p>Understand repeat buyer behavior</p><div class="mini-list"><div><span>High-activity buyer</span><strong>Yes</strong></div><div><span>Sample records</span><strong>5</strong></div><div><span>Category signal</span><strong>Works</strong></div><div><span>Province</span><strong>North West</strong></div></div></div>
+                <div class="panel"><h3>Source-quality flags</h3><p>Know what needs extra verification</p><div class="checklist"><span>Official source link required</span><span>Duplicate reference detection</span><span>Mixed active/cancelled status</span><span>Verify documents before acting</span></div></div>
+              </div>
+              <div class="panel chart-panel"><h3>Opportunity trend</h3><p>Illustrative prototype view</p><div class="chart"><svg preserveAspectRatio="none" viewBox="0 0 600 100"><path d="M0,78 C60,48 80,84 135,62 C190,38 210,72 262,42 C318,10 352,74 406,39 C463,6 487,64 538,42 C570,30 588,24 600,18" fill="none" stroke="#0cc7e8" stroke-width="5" stroke-linecap="round"/><path d="M0,78 C60,48 80,84 135,62 C190,38 210,72 262,42 C318,10 352,74 406,39 C463,6 487,64 538,42 C570,30 588,24 600,18 L600,100 L0,100 Z" fill="rgba(12,199,232,.16)"/></svg></div></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section"><div class="container center"><h2>Smarter signals. Better decisions. Less tender noise.</h2><p class="section-intro">The first version is designed around three practical questions: what fits, who is buying, and what needs verification?</p><div class="cards-3"><article class="feature-card"><div class="icon-bubble">◎</div><h3>Opportunity-fit scoring</h3><p>Prioritize public-sector opportunities based on category, province, timing, briefing risk, source quality, and business-profile fit.</p></article><article class="feature-card"><div class="icon-bubble">◌</div><h3>Buyer intelligence</h3><p>Understand active buyers, repeat demand, category patterns, and useful history even when a record is no longer a live opportunity.</p></article><article class="feature-card"><div class="icon-bubble">✓</div><h3>Source-quality flags</h3><p>Spot cancelled, duplicate, or mixed-status tender records so users know what to verify before spending time on a bid.</p></article></div></div></section>
+
+    <section id="how" class="section"><div class="container center"><h2>How it works</h2><p class="section-intro">A lightweight intelligence workflow for SMEs that do not have a full-time bid intelligence team.</p><div class="how"><article class="step-card"><h3>Create a business profile</h3><p>Tell us your sector, service areas, capabilities, and tender workflow needs.</p></article><article class="step-card"><h3>Score and classify opportunities</h3><p>Separate live opportunities, buyer-intelligence records, and not-actionable records with transparent reasons.</p></article><article class="step-card"><h3>Act with better context</h3><p>Use fit scores, buyer signals, and source-quality flags to decide what deserves attention.</p></article></div><div id="trust" class="trust-strip"><div class="shield">🛡</div><div><h3>Independent intelligence layer. Not an official tender portal.</h3><p>ProcureSignal SA is independent and is not affiliated with any South African government entity or issuing buyer. Users must always verify official tender documents on the official issuing authority source before acting.</p></div><a class="btn btn-ghost" href="https://forms.office.com/r/t58qW2mKuR" target="_blank" rel="noopener">Give feedback</a></div></div></section>
+
+    <section class="cta-section"><div class="container"><div class="cta-box"><h2>Help shape the first version of ProcureSignal SA.</h2><p class="lead">If your business works with South African public-sector opportunities, share feedback and request a sample opportunity-fit profile.</p><div class="hero-actions"><a class="btn btn-primary" href="https://forms.office.com/r/t58qW2mKuR" target="_blank" rel="noopener">Request a sample opportunity-fit profile →</a><a class="btn btn-ghost" href="#features">Review features</a></div></div></div></section>
+  </main>
+
+  <footer><div class="container footer-grid"><div><a class="logo" href="#" style="color:#fff"><div class="logo-mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M12 42L24 30L34 39L52 18" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 21C22 11 37 9 48 17" stroke="white" stroke-opacity=".78" stroke-width="4" stroke-linecap="round"/><circle cx="12" cy="42" r="4" fill="white"/><circle cx="24" cy="30" r="4" fill="white"/><circle cx="34" cy="39" r="4" fill="white"/></svg></div><div class="logo-word" style="color:#fff">Procure<span>Signal</span><small style="color:rgba(255,255,255,.72)">SA</small></div></a><p style="max-width:440px;color:rgba(255,255,255,.62)">Procurement intelligence that helps South African SMEs prioritize public-sector opportunities with better context.</p></div><div class="footer-disclaimer">ProcureSignal SA is independent and is not affiliated with, endorsed by, sponsored by, or operated by the South African government, National Treasury, OCPO, CSD, CIDB, Eskom, Transnet, municipalities, state-owned entities, or issuing buyers. Information may be incomplete, delayed, amended, duplicated, or inaccurate. Users must verify all tender documents, deadlines, addenda, briefing requirements, eligibility rules, and submission instructions on the official issuing authority source before acting. Opportunity-fit scores are prototype prioritization aids. They do not predict tender wins and do not constitute legal, procurement, tax, financial, or bid-submission advice.</div></div></footer>
+</body>
+</html>
