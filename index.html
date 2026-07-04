@@ -4,21 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ProcureSignal | Africa-first Procurement Intelligence</title>
-  <meta name="description" content="ProcureSignal is an independent procurement intelligence workspace helping procurement teams prioritize opportunities with fit scoring, buyer intelligence, source-quality checks, and official source verification." />
+  <meta name="description" content="ProcureSignal helps African businesses prioritize public-sector opportunities with fit scoring, buyer intelligence, source-quality checks, official documents, and saved workspaces." />
   <link rel="canonical" href="https://www.procuresignal.co.za/" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <meta property="og:title" content="ProcureSignal" />
-  <meta property="og:description" content="Africa-first procurement intelligence for opportunity-fit scoring, buyer intelligence, and source verification." />
+  <meta property="og:description" content="Africa-first procurement intelligence for fit scoring, buyer intelligence, source-quality checks, and official document review." />
   <meta property="og:url" content="https://www.procuresignal.co.za/" />
-  <meta property="og:image" content="https://www.procuresignal.co.za/assets/social-preview.png" />
+  <meta property="og:image" content="https://www.procuresignal.co.za/assets/procuresignal-africa-sme-team.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <style>
     :root {
       --ink: #06142e;
-      --muted: #61718c;
+      --muted: #5f6f89;
       --navy: #020b1f;
       --navy-2: #061a3a;
       --blue: #1557ff;
@@ -26,19 +26,15 @@
       --cyan: #0cc7e8;
       --teal: #10bfa4;
       --green: #39e29d;
+      --paper: #f7fbff;
       --line: rgba(21, 44, 80, 0.12);
-      --glass: rgba(255,255,255,.78);
-      --shadow: 0 24px 80px rgba(3, 27, 62, .12);
-      --soft-shadow: 0 14px 42px rgba(3, 27, 62, .08);
+      --glass: rgba(255, 255, 255, 0.82);
+      --shadow: 0 24px 80px rgba(3, 27, 62, 0.14);
+      --soft-shadow: 0 14px 42px rgba(3, 27, 62, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -46,35 +42,30 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       line-height: 1.55;
       background:
-        radial-gradient(circle at 12% 8%, rgba(12,199,232,.20), transparent 28%),
-        radial-gradient(circle at 88% 3%, rgba(21,87,255,.16), transparent 26%),
-        radial-gradient(circle at 82% 52%, rgba(57,226,157,.12), transparent 32%),
-        linear-gradient(180deg, #f7fbff 0%, #ffffff 54%, #eef8ff 100%);
+        radial-gradient(circle at 12% 2%, rgba(12, 199, 232, 0.16), transparent 26%),
+        radial-gradient(circle at 94% 14%, rgba(16, 191, 164, 0.13), transparent 26%),
+        linear-gradient(180deg, #f7fbff 0%, #ffffff 46%, #eef8ff 100%);
       overflow-x: hidden;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
+    img { max-width: 100%; display: block; }
+    figure { margin: 0; }
+    a { color: inherit; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
+      background: rgba(247, 251, 255, 0.86);
+      border-bottom: 1px solid rgba(21, 44, 80, 0.08);
       backdrop-filter: blur(18px);
-      background: rgba(247,251,255,.82);
-      border-bottom: 1px solid rgba(21,44,80,.08);
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -97,107 +88,55 @@
       border-radius: 16px;
       display: grid;
       place-items: center;
-      background:
-        radial-gradient(circle at 75% 20%, rgba(12,199,232,.32), transparent 26%),
-        linear-gradient(135deg, #062555 0%, #1557ff 52%, #10bfa4 100%);
-      box-shadow: 0 14px 30px rgba(21,87,255,.24);
+      background: linear-gradient(135deg, #062555 0%, var(--blue) 52%, var(--teal) 100%);
+      box-shadow: 0 14px 30px rgba(21, 87, 255, 0.24);
     }
 
-    .brand-mark svg {
-      width: 33px;
-      height: 33px;
-      display: block;
-      filter: drop-shadow(0 7px 11px rgba(0,0,0,.18));
-    }
-
-    .logo-word {
-      font-weight: 950;
-      letter-spacing: -.045em;
-      font-size: clamp(1.05rem, 2vw, 1.26rem);
-      white-space: nowrap;
-    }
-
-    .logo-word span {
-      color: var(--cyan);
-    }
-
-    .logo-word small {
-      font-size: .64rem;
-      letter-spacing: .06em;
-      margin-left: 4px;
-      color: #173457;
-    }
+    .brand-mark svg { width: 33px; height: 33px; filter: drop-shadow(0 7px 11px rgba(0, 0, 0, 0.18)); }
+    .logo-word { font-weight: 950; letter-spacing: -0.045em; font-size: clamp(1.08rem, 2vw, 1.28rem); white-space: nowrap; }
+    .logo-word span { color: var(--cyan); }
 
     .navlinks {
       display: flex;
-      gap: 26px;
+      gap: 24px;
       color: #173457;
-      font-size: .92rem;
+      font-size: 0.92rem;
     }
 
-    .navlinks a {
-      text-decoration: none;
-      opacity: .74;
-      font-weight: 750;
-    }
-
-    .navlinks a:hover {
-      opacity: 1;
-    }
+    .navlinks a { text-decoration: none; opacity: 0.76; font-weight: 800; }
+    .navlinks a:hover { opacity: 1; }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+      min-height: 46px;
       border-radius: 999px;
       padding: 13px 20px;
       border: 1px solid transparent;
       font-weight: 900;
       text-decoration: none;
-      letter-spacing: -.01em;
+      letter-spacing: -0.01em;
       white-space: nowrap;
       transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: #fff;
-      background: linear-gradient(135deg, var(--blue), var(--cyan) 62%, var(--teal));
-      box-shadow: 0 18px 42px rgba(21,87,255,.24);
-    }
-
-    .btn-ghost {
-      color: var(--ink);
-      background: rgba(255,255,255,.82);
-      border-color: rgba(21,44,80,.14);
-      box-shadow: 0 12px 26px rgba(3,27,62,.06);
-    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #fff; background: linear-gradient(135deg, var(--blue), var(--cyan) 62%, var(--teal)); box-shadow: 0 18px 42px rgba(21, 87, 255, 0.24); }
+    .btn-dark { color: #fff; background: var(--navy); box-shadow: 0 14px 34px rgba(2, 11, 31, 0.22); }
+    .btn-ghost { color: var(--ink); background: rgba(255, 255, 255, 0.9); border-color: rgba(21, 44, 80, 0.14); box-shadow: 0 12px 26px rgba(3, 27, 62, 0.06); }
 
     .hero {
       position: relative;
-      padding: 76px 0 56px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 560px;
-      height: 560px;
-      border-radius: 50%;
-      top: -170px;
-      right: -210px;
-      background: radial-gradient(circle, rgba(12,199,232,.23), transparent 68%);
-      z-index: -1;
+      isolation: isolate;
+      padding: 76px 0 52px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-      gap: clamp(28px, 5vw, 52px);
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(30px, 5vw, 60px);
       align-items: center;
     }
 
@@ -209,378 +148,182 @@
       align-items: center;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,.82);
-      border: 1px solid rgba(16,191,164,.22);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(16, 191, 164, 0.22);
       color: #0f6f64;
-      font-weight: 900;
-      font-size: .78rem;
-      letter-spacing: .08em;
+      font-weight: 950;
+      font-size: 0.77rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      box-shadow: 0 10px 24px rgba(3,27,62,.05);
+      box-shadow: 0 10px 24px rgba(3, 27, 62, 0.05);
       margin-bottom: 22px;
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 99px;
-      background: var(--teal);
-      box-shadow: 0 0 0 6px rgba(16,191,164,.13);
-      flex: 0 0 8px;
-    }
+    .dot { width: 8px; height: 8px; border-radius: 99px; background: var(--teal); box-shadow: 0 0 0 6px rgba(16, 191, 164, 0.13); flex: 0 0 8px; }
 
     h1 {
       margin: 0;
-      font-size: clamp(3rem, 6.6vw, 6.15rem);
-      line-height: 1.12;
-      letter-spacing: -.075em;
-      padding-bottom: .08em;
-      overflow: visible;
+      font-size: clamp(3.1rem, 6.4vw, 6.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.075em;
     }
 
     .grad-text {
-      display: inline;
-      -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
       background: linear-gradient(90deg, var(--blue), var(--cyan), var(--teal));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      padding-bottom: .12em;
-      line-height: 1.18;
-      -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
     }
 
     .lead {
       max-width: 670px;
       color: var(--muted);
-      font-size: clamp(1.04rem, 1.8vw, 1.24rem);
+      font-size: clamp(1.05rem, 1.8vw, 1.24rem);
       margin: 24px 0 0;
     }
 
-    .product-note {
-      margin-top: 18px;
-      padding: 13px 15px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(21,44,80,.10);
-      color: #354761;
-      font-size: .94rem;
-    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
 
-    .product-note strong {
-      color: var(--ink);
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 32px;
-    }
-
-    .trust-row {
-      margin-top: 24px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
+    .trust-row { margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap; }
     .trust-pill {
       display: inline-flex;
       align-items: center;
       gap: 7px;
       padding: 8px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(21,44,80,.10);
-      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(21, 44, 80, 0.10);
+      background: rgba(255, 255, 255, 0.72);
       color: var(--muted);
-      font-size: .82rem;
-      font-weight: 780;
+      font-size: 0.82rem;
+      font-weight: 820;
     }
 
-    .product-preview {
-      width: 100%;
-      max-width: 640px;
-      margin-left: auto;
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
       border-radius: 34px;
-      border: 1px solid rgba(21,44,80,.12);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.70)),
-        radial-gradient(circle at 20% 10%, rgba(12,199,232,.16), transparent 34%);
+      overflow: hidden;
       box-shadow: var(--shadow);
-      padding: clamp(16px, 2.5vw, 22px);
-      overflow: visible;
+      border: 1px solid rgba(21, 44, 80, 0.12);
+      background: var(--navy);
     }
 
-    .preview-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .preview-kicker {
-      width: fit-content;
-      padding: 6px 10px;
-      border-radius: 999px;
-      color: #075f6b;
-      background: rgba(12,199,232,.12);
-      border: 1px solid rgba(12,199,232,.22);
-      font-weight: 900;
-      font-size: .72rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .preview-title {
-      font-size: clamp(1.22rem, 2.3vw, 1.55rem);
-      font-weight: 950;
-      letter-spacing: -.04em;
-      line-height: 1.15;
-    }
-
-    .preview-sub {
-      color: var(--muted);
-      font-size: .92rem;
-      margin-top: 4px;
-    }
-
-    .preview-mark {
-      width: 44px;
-      height: 44px;
-      flex: 0 0 44px;
-      border-radius: 15px;
-      background: linear-gradient(135deg, var(--blue), var(--cyan) 70%, var(--teal));
-      display: grid;
-      place-items: center;
-      box-shadow: 0 16px 34px rgba(21,87,255,.22);
-    }
-
-    .preview-mark svg {
-      width: 30px;
-      height: 30px;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .metric, .panel, .trend-panel {
-      background: rgba(255,255,255,.82);
-      border: 1px solid rgba(21,44,80,.10);
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(3,27,62,.04);
-    }
-
-    .metric {
-      padding: 12px;
-      min-width: 0;
-    }
-
-    .metric-label {
-      color: var(--muted);
-      font-size: .65rem;
-      font-weight: 900;
-      letter-spacing: .02em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .metric-value {
-      margin-top: 5px;
-      font-size: 1.34rem;
-      font-weight: 950;
-      letter-spacing: -.04em;
-      line-height: 1;
-    }
-
-    .metric-change {
-      margin-top: 5px;
-      color: #049c72;
-      font-weight: 850;
-      font-size: .68rem;
-      line-height: 1.2;
-    }
-
-    .panel-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, .95fr);
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .panel {
-      padding: 16px;
-      min-height: 178px;
-      min-width: 0;
-    }
-
-    .panel h3, .trend-panel h3 {
-      margin: 0 0 4px;
-      font-size: 1rem;
-      line-height: 1.22;
-      letter-spacing: -.02em;
-    }
-
-    .panel p, .trend-panel p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .82rem;
-    }
-
-    .score-row {
-      display: grid;
-      grid-template-columns: 98px minmax(0, 1fr);
-      gap: 15px;
-      align-items: center;
-      margin-top: 16px;
-    }
-
-    .gauge {
-      width: 98px;
-      height: 98px;
-      border-radius: 50%;
-      background: conic-gradient(var(--blue) 0 71%, rgba(21,44,80,.08) 71% 100%);
-      display: grid;
-      place-items: center;
-      position: relative;
-    }
-
-    .gauge::after {
-      content: "";
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.96);
-      position: absolute;
-    }
-
-    .gauge span {
-      position: relative;
-      z-index: 1;
-      font-weight: 950;
-      color: var(--ink);
-      font-size: 1.08rem;
-    }
-
-    .mini-list {
-      display: grid;
-      gap: 7px;
-      color: var(--muted);
-      font-size: .76rem;
-      min-width: 0;
-    }
-
-    .mini-list div {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .mini-list strong {
-      color: #50617c;
-      flex: 0 0 auto;
-    }
-
-    .checklist {
-      margin-top: 14px;
-      display: grid;
-      gap: 8px;
-      font-size: .78rem;
-      color: var(--muted);
-    }
-
-    .checklist span {
-      display: flex;
-      gap: 7px;
-      align-items: flex-start;
-    }
-
-    .checklist span::before {
-      content: "✓";
-      color: #049c72;
-      font-weight: 950;
-      flex: 0 0 auto;
-    }
-
-    .trend-panel {
-      padding: 16px;
-    }
-
-    .chart {
-      height: 96px;
-      margin-top: 16px;
-      border-radius: 16px;
-      background:
-        linear-gradient(180deg, rgba(12,199,232,.14), rgba(255,255,255,0)),
-        repeating-linear-gradient(90deg, transparent, transparent 62px, rgba(21,44,80,.06) 63px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .chart svg {
-      position: absolute;
-      inset: 0;
+    .hero-visual img {
       width: 100%;
       height: 100%;
+      min-height: 560px;
+      object-fit: cover;
     }
 
-    .section {
-      padding: 70px 0;
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(2, 11, 31, 0.02), rgba(2, 11, 31, 0.32));
+      pointer-events: none;
     }
 
-    .center {
-      text-align: center;
+    .preview-card {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      border-radius: 26px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.68);
+      box-shadow: 0 20px 58px rgba(2, 11, 31, 0.24);
+      backdrop-filter: blur(14px);
     }
+
+    .preview-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+    .preview-kicker { color: #0f6f64; font-size: 0.72rem; font-weight: 950; letter-spacing: 0.08em; text-transform: uppercase; }
+    .preview-title { margin-top: 4px; font-size: 1.18rem; line-height: 1.18; font-weight: 950; letter-spacing: -0.035em; }
+    .score-pill { padding: 8px 10px; border-radius: 999px; background: #ecfdf5; color: #047857; font-size: 0.8rem; font-weight: 950; white-space: nowrap; }
+
+    .opportunity-preview {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: end;
+      color: #33445f;
+      font-size: 0.92rem;
+    }
+
+    .preview-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .mini-pill { padding: 6px 8px; border-radius: 999px; background: #eef6ff; color: #275079; font-size: 0.75rem; font-weight: 850; }
+
+    .search-preview {
+      margin-top: 22px;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(21, 44, 80, 0.10);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      border-radius: 999px;
+      padding: 0 16px;
+      background: #fff;
+      border: 1px solid rgba(21, 44, 80, 0.10);
+      color: #6c7b91;
+      font-weight: 750;
+    }
+
+    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+    .section { padding: 72px 0; }
+    .section.tight { padding-top: 40px; }
+    .center { text-align: center; }
 
     h2 {
       margin: 0;
-      font-size: clamp(2rem, 4.2vw, 3.8rem);
-      letter-spacing: -.065em;
+      font-size: clamp(2rem, 4.1vw, 3.75rem);
+      letter-spacing: -0.065em;
       line-height: 1.08;
-      overflow: visible;
     }
 
     .section-intro {
       margin: 18px auto 0;
-      max-width: 780px;
+      max-width: 790px;
       color: var(--muted);
       font-size: 1.05rem;
     }
 
-    .cards-3, .how {
+    .cards-3, .cards-5, .how {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 18px;
       margin-top: 34px;
     }
 
-    .feature-card, .step-card {
+    .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cards-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .how { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .feature-card, .step-card, .mini-feature {
       position: relative;
-      padding: 26px;
+      padding: 24px;
       border-radius: 26px;
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(21,44,80,.10);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(21, 44, 80, 0.10);
       box-shadow: var(--soft-shadow);
       overflow: hidden;
       text-align: left;
     }
 
-    .feature-card::before {
+    .mini-feature { padding: 20px; }
+    .feature-card::before, .mini-feature::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 20% 5%, rgba(12,199,232,.12), transparent 38%);
+      background: radial-gradient(circle at 20% 5%, rgba(12, 199, 232, 0.12), transparent 40%);
       pointer-events: none;
     }
 
@@ -588,7 +331,7 @@
       width: 46px;
       height: 46px;
       border-radius: 16px;
-      background: linear-gradient(135deg, rgba(21,87,255,.12), rgba(12,199,232,.12));
+      background: linear-gradient(135deg, rgba(21, 87, 255, 0.12), rgba(12, 199, 232, 0.14));
       display: grid;
       place-items: center;
       color: var(--blue);
@@ -596,22 +339,15 @@
       margin-bottom: 18px;
     }
 
-    .feature-card h3, .step-card h3 {
+    .feature-card h3, .step-card h3, .mini-feature h3 {
       margin: 0 0 10px;
-      font-size: 1.18rem;
-      letter-spacing: -.03em;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
       line-height: 1.18;
     }
 
-    .feature-card p, .step-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .step-card {
-      counter-increment: step;
-    }
-
+    .feature-card p, .step-card p, .mini-feature p { margin: 0; color: var(--muted); }
+    .step-card { counter-increment: step; }
     .step-card::before {
       content: counter(step);
       width: 32px;
@@ -625,6 +361,53 @@
       margin-bottom: 18px;
     }
 
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+      align-items: start;
+      margin-top: 34px;
+    }
+
+    .workspace-panel {
+      border-radius: 30px;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(21, 44, 80, 0.10);
+      box-shadow: var(--shadow);
+    }
+
+    .workspace-panel.dark {
+      color: #fff;
+      background:
+        radial-gradient(circle at 78% 8%, rgba(12, 199, 232, 0.20), transparent 30%),
+        linear-gradient(135deg, #061a3a, #020b1f);
+    }
+
+    .workspace-panel.dark p { color: rgba(255, 255, 255, 0.68); }
+
+    .metric-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+    .metric {
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    .metric strong { display: block; font-size: 1.85rem; line-height: 1; letter-spacing: -0.04em; }
+    .metric span { display: block; margin-top: 7px; color: rgba(255, 255, 255, 0.66); font-size: 0.85rem; }
+
+    .queue { display: grid; gap: 12px; }
+    .queue-card {
+      border-radius: 20px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid rgba(21, 44, 80, 0.10);
+      box-shadow: 0 10px 24px rgba(3, 27, 62, 0.04);
+    }
+    .queue-card h3 { margin: 8px 0 6px; font-size: 1rem; letter-spacing: -0.02em; }
+    .queue-card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+    .queue-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+
     .trust-strip {
       margin-top: 36px;
       display: grid;
@@ -634,8 +417,8 @@
       text-align: left;
       border-radius: 28px;
       padding: 22px;
-      border: 1px solid rgba(21,44,80,.10);
-      background: linear-gradient(135deg, rgba(255,255,255,.82), rgba(238,248,255,.82));
+      border: 1px solid rgba(21, 44, 80, 0.10);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(238, 248, 255, 0.88));
       box-shadow: var(--soft-shadow);
     }
 
@@ -645,163 +428,79 @@
       border-radius: 18px;
       display: grid;
       place-items: center;
-      background: rgba(16,191,164,.12);
+      background: rgba(16, 191, 164, 0.12);
       color: var(--teal);
       font-size: 1.3rem;
     }
 
-    .trust-strip h3 {
-      margin: 0 0 4px;
-      letter-spacing: -.03em;
-    }
+    .trust-strip h3 { margin: 0 0 4px; letter-spacing: -0.03em; }
+    .trust-strip p { margin: 0; color: var(--muted); }
 
-    .trust-strip p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .cta-section {
-      padding: 38px 0 82px;
-    }
-
+    .cta-section { padding: 38px 0 82px; }
     .cta-box {
       border-radius: 34px;
-      padding: clamp(30px,5vw,54px);
+      padding: clamp(30px, 5vw, 54px);
       background:
-        radial-gradient(circle at 80% 15%, rgba(12,199,232,.18), transparent 32%),
+        radial-gradient(circle at 80% 15%, rgba(12, 199, 232, 0.18), transparent 32%),
         linear-gradient(135deg, #061a3a, #020b1f);
       color: #fff;
-      box-shadow: 0 28px 90px rgba(2,11,31,.22);
+      box-shadow: 0 28px 90px rgba(2, 11, 31, 0.22);
     }
-
-    .cta-box .lead {
-      color: rgba(255,255,255,.72);
-      max-width: 780px;
-    }
+    .cta-box .lead { color: rgba(255, 255, 255, 0.72); max-width: 780px; }
 
     footer {
-      color: rgba(255,255,255,.76);
+      color: rgba(255, 255, 255, 0.76);
       background: #020b1f;
       padding: 44px 0;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 28px;
       align-items: start;
     }
 
-    .footer-disclaimer {
-      color: rgba(255,255,255,.58);
-      font-size: .9rem;
+    .footer-disclaimer { color: rgba(255, 255, 255, 0.58); font-size: 0.9rem; }
+    .footer-links { margin-top: 18px; display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.9rem; }
+    .footer-links a { color: rgba(255, 255, 255, 0.78); text-decoration: none; }
+
+    @media (max-width: 1100px) {
+      .hero-grid, .workspace, .cards-5, .footer-grid, .trust-strip { grid-template-columns: 1fr; }
+      .cards-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-visual { min-height: 520px; }
+      .hero-visual img { min-height: 520px; }
     }
 
-    .footer-links {
-      margin-top: 18px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      font-size: .9rem;
+    @media (max-width: 820px) {
+      .nav { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+      .navlinks { flex-wrap: wrap; gap: 14px; }
+      .nav .btn { width: 100%; }
+      .cards-3, .how { grid-template-columns: 1fr; }
+      .opportunity-preview { grid-template-columns: 1fr; }
     }
 
-    .footer-links a {
-      color: rgba(255,255,255,.78);
-      text-decoration: none;
-    }
-
-    @media (max-width: 1040px) {
-      .hero-grid, .cards-3, .how, .footer-grid, .trust-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .product-preview {
-        margin: 10px auto 0;
-        max-width: 760px;
-      }
-
-      h1 {
-        font-size: clamp(3.1rem, 10vw, 5.4rem);
-      }
-    }
-
-    @media (max-width: 780px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 16px 0;
-      }
-
-      .navlinks {
-        flex-wrap: wrap;
-        gap: 14px;
-      }
-
-      .nav .btn {
-        width: 100%;
-      }
-
-      .metrics {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .panel-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
-
-      .hero {
-        padding-top: 48px;
-      }
-
-      h1 {
-        font-size: clamp(2.8rem, 15.5vw, 4.3rem);
-        line-height: 1.08;
-        letter-spacing: -.065em;
-      }
-
-      .lead {
-        font-size: 1.02rem;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .product-preview {
-        border-radius: 26px;
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .hero { padding-top: 48px; }
+      h1 { font-size: clamp(2.8rem, 15.5vw, 4.2rem); letter-spacing: -0.065em; }
+      .lead { font-size: 1.02rem; }
+      .hero-actions .btn, .cta-box .btn { width: 100%; }
+      .hero-visual { border-radius: 26px; min-height: 520px; }
+      .hero-visual img { min-height: 360px; object-position: 58% center; }
+      .preview-card {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin: -74px 12px 12px;
         padding: 14px;
+        border-radius: 22px;
       }
-
-      .preview-top {
-        align-items: flex-start;
-      }
-
-      .metrics {
-        grid-template-columns: 1fr 1fr;
-        gap: 9px;
-      }
-
-      .score-row {
-        grid-template-columns: 1fr;
-      }
-
-      .gauge {
-        margin: 0 auto;
-      }
-
-      .chart {
-        height: 82px;
-      }
-
-      h2 {
-        font-size: clamp(2rem, 10vw, 3rem);
-      }
+      .score-pill { width: fit-content; }
+      .cards-5, .metric-grid { grid-template-columns: 1fr; }
+      .section { padding: 54px 0; }
+      h2 { font-size: clamp(2rem, 10vw, 3rem); }
     }
   </style>
 </head>
@@ -816,7 +515,6 @@
             <path d="M51 19V30" stroke="white" stroke-width="6" stroke-linecap="round"/>
             <path d="M51 19H40" stroke="white" stroke-width="6" stroke-linecap="round"/>
             <path d="M14 23C23 12 39 10 50 19" stroke="white" stroke-opacity=".62" stroke-width="4" stroke-linecap="round"/>
-            <path d="M18 50C31 57 46 52 54 40" stroke="white" stroke-opacity=".42" stroke-width="4" stroke-linecap="round"/>
             <circle cx="13" cy="42" r="4.5" fill="white"/>
             <circle cx="24" cy="31" r="4.5" fill="white"/>
             <circle cx="34" cy="38" r="4.5" fill="white"/>
@@ -826,13 +524,13 @@
       </a>
 
       <nav class="navlinks" aria-label="Primary navigation">
+        <a href="#product">Product</a>
         <a href="#features">Features</a>
-        <a href="#preview">Product</a>
-        <a href="#how">How it works</a>
+        <a href="#workflow">Workflow</a>
         <a href="#trust">Trust</a>
       </nav>
 
-      <a class="btn btn-primary" href="https://app.procuresignal.co.za">Open workspace</a>
+      <a class="btn btn-primary" href="https://app.procuresignal.co.za">Create account</a>
     </div>
   </header>
 
@@ -841,182 +539,181 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow"><span class="dot"></span> Africa-first procurement intelligence</div>
-
-          <h1>Procurement intelligence for <span class="grad-text">growing businesses</span></h1>
-
+          <h1>Find the public-sector opportunities <span class="grad-text">worth acting on.</span></h1>
           <p class="lead">
-            ProcureSignal helps procurement teams prioritize the right public-sector opportunities using opportunity-fit scoring,
-            buyer intelligence, source-quality checks, and official document verification.
+            ProcureSignal helps African businesses and tender consultants cut through noisy tender lists with fit scoring,
+            buyer intelligence, source-quality checks, official document review, and a saved opportunity workspace.
           </p>
 
-          <div class="product-note">
-            <strong>Built for daily use:</strong> create a business profile, review scored opportunities, save what matters, and verify official source records before spending time on a bid. It is not an official tender portal and does not replace official tender documents or buyer websites.
-          </div>
-
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://app.procuresignal.co.za">Start free trial →</a>
-            <a class="btn btn-ghost" href="#preview">View product workspace</a>
+            <a class="btn btn-primary" href="https://app.procuresignal.co.za">Create account →</a>
+            <a class="btn btn-ghost" href="#product">See the workspace</a>
           </div>
 
           <div class="trust-row">
-            <span class="trust-pill">Independent</span>
-            <span class="trust-pill">Source-aware</span>
-            <span class="trust-pill">South Africa is the first live market</span>
+            <span class="trust-pill">Independent intelligence layer</span>
+            <span class="trust-pill">Official-source reminders</span>
+            <span class="trust-pill">Built for paid procurement workflow</span>
+          </div>
+
+          <div class="search-preview" aria-label="Opportunity search preview">
+            <div class="search-bar">Search by service, buyer, category, deadline, or region</div>
+            <div class="filter-row">
+              <span class="mini-pill">High fit</span>
+              <span class="mini-pill">Closing soon</span>
+              <span class="mini-pill">Documents available</span>
+              <span class="mini-pill">Needs review</span>
+            </div>
           </div>
         </div>
 
-        <section id="preview" class="product-preview" aria-label="ProcureSignal product dashboard preview">
-          <div class="preview-top">
-            <div>
-              <div class="preview-kicker">Product workspace</div>
-              <div class="preview-title">Opportunity intelligence workspace</div>
-              <div class="preview-sub">Live workspace for business-profile scoring</div>
+        <figure class="hero-visual">
+          <img src="assets/procuresignal-africa-sme-team.png" alt="African business owners and procurement team reviewing opportunities together in a modern workspace" />
+          <figcaption class="preview-card">
+            <div class="preview-top">
+              <div>
+                <div class="preview-kicker">Example workspace preview</div>
+                <div class="preview-title">Facilities tender matched to your company profile</div>
+              </div>
+              <span class="score-pill">84 fit score</span>
             </div>
-            <div class="preview-mark" aria-hidden="true">
-              <svg viewBox="0 0 64 64" fill="none">
-                <path d="M13 42L24 31L34 38L51 19" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M51 19V30" stroke="white" stroke-width="6" stroke-linecap="round"/>
-                <path d="M51 19H40" stroke="white" stroke-width="6" stroke-linecap="round"/>
-                <circle cx="13" cy="42" r="4.5" fill="white"/>
-                <circle cx="24" cy="31" r="4.5" fill="white"/>
-                <circle cx="34" cy="38" r="4.5" fill="white"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="metrics">
-            <div class="metric">
-              <div class="metric-label">Opportunities</div>
-              <div class="metric-value">10</div>
-              <div class="metric-change">month sample</div>
-            </div>
-            <div class="metric">
-              <div class="metric-label">Buyers</div>
-              <div class="metric-value">6</div>
-              <div class="metric-change">detected</div>
-            </div>
-            <div class="metric">
-              <div class="metric-label">Live</div>
-              <div class="metric-value">4</div>
-              <div class="metric-change">actionable</div>
-            </div>
-            <div class="metric">
-              <div class="metric-label">Flags</div>
-              <div class="metric-value">4</div>
-              <div class="metric-change">mixed status</div>
-            </div>
-          </div>
-
-          <div class="panel-grid">
-            <article class="panel">
-              <h3>Opportunity-fit score</h3>
-              <p>Shows why an opportunity may or may not fit a business profile.</p>
-              <div class="score-row">
-                <div class="gauge"><span>87%</span></div>
-                <div class="mini-list">
-                  <div><span>Category match</span><strong>25%</strong></div>
-                  <div><span>Location match</span><strong>20%</strong></div>
-                  <div><span>Deadline fit</span><strong>15%</strong></div>
-                  <div><span>Source signal</span><strong>10%</strong></div>
+            <div class="opportunity-preview">
+              <div>
+                Review scope, buyer, deadline, source checks, and official documents before deciding whether to bid.
+                <div class="preview-meta">
+                  <span class="mini-pill">Buyer signals</span>
+                  <span class="mini-pill">Saved workspace</span>
+                  <span class="mini-pill">Official documents</span>
                 </div>
               </div>
-            </article>
-
-            <article class="panel">
-              <h3>Buyer intelligence</h3>
-              <p>Highlights repeat buyer behavior and useful buyer history.</p>
-              <div class="mini-list" style="margin-top:14px">
-                <div><span>High-activity buyer</span><strong>Yes</strong></div>
-                <div><span>Sample records</span><strong>5</strong></div>
-                <div><span>Category signal</span><strong>Works</strong></div>
-                <div><span>Region signal</span><strong>Verified</strong></div>
-              </div>
-            </article>
-          </div>
-
-          <article class="trend-panel">
-            <h3>Source-quality flags</h3>
-            <p>Flags what needs extra official-source verification before spending time on a bid.</p>
-            <div class="checklist">
-              <span>Official source link required</span>
-              <span>Duplicate reference detection</span>
-              <span>Mixed active/cancelled status</span>
-              <span>Verify documents before acting</span>
+              <a class="btn btn-dark" href="https://app.procuresignal.co.za">Open workspace</a>
             </div>
-            <div class="chart" aria-hidden="true">
-              <svg preserveAspectRatio="none" viewBox="0 0 600 100">
-                <path d="M0,78 C60,48 80,84 135,62 C190,38 210,72 262,42 C318,10 352,74 406,39 C463,6 487,64 538,42 C570,30 588,24 600,18" fill="none" stroke="#0cc7e8" stroke-width="5" stroke-linecap="round"/>
-                <path d="M0,78 C60,48 80,84 135,62 C190,38 210,72 262,42 C318,10 352,74 406,39 C463,6 487,64 538,42 C570,30 588,24 600,18 L600,100 L0,100 Z" fill="rgba(12,199,232,.16)"/>
-              </svg>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="product" class="section tight">
+      <div class="container center">
+        <h2>A cleaner workspace for tender decisions.</h2>
+        <p class="section-intro">
+          ProcureSignal is designed for businesses that need to decide quickly which opportunities deserve time,
+          documents, pricing effort, and follow-up.
+        </p>
+
+        <div class="workspace">
+          <article class="workspace-panel dark">
+            <p class="preview-kicker">Opportunity queue</p>
+            <h3 style="margin:8px 0 0;font-size:2rem;letter-spacing:-.05em;line-height:1.05">Prioritize the work that can actually fit.</h3>
+            <p style="margin-top:14px">
+              Use profile scoring, deadline context, buyer patterns, and verification signals before your team spends hours on low-fit tenders.
+            </p>
+            <div class="metric-grid">
+              <div class="metric"><strong>84</strong><span>fit score example</span></div>
+              <div class="metric"><strong>12</strong><span>days to close</span></div>
+              <div class="metric"><strong>3</strong><span>documents to review</span></div>
+              <div class="metric"><strong>1</strong><span>source flag</span></div>
             </div>
           </article>
-        </section>
+
+          <div class="workspace-panel">
+            <div class="queue">
+              <article class="queue-card">
+                <div class="queue-row"><span class="mini-pill">High fit</span><strong>Saved</strong></div>
+                <h3>Facilities maintenance opportunity</h3>
+                <p>Good category match, enough time to prepare, official document links available.</p>
+              </article>
+              <article class="queue-card">
+                <div class="queue-row"><span class="mini-pill">Needs review</span><strong>Verify</strong></div>
+                <h3>ICT support and equipment request</h3>
+                <p>Relevant service keywords matched, but source-quality flags require official verification.</p>
+              </article>
+              <article class="queue-card">
+                <div class="queue-row"><span class="mini-pill">Buyer signal</span><strong>Monitor</strong></div>
+                <h3>Training services from a repeat public buyer</h3>
+                <p>Buyer history suggests useful demand patterns even before bid decisions.</p>
+              </article>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="features" class="section">
       <div class="container center">
-        <h2>Smarter signals. Better decisions. Less tender noise.</h2>
+        <h2>Built around the moments that decide whether a tender is worth your time.</h2>
         <p class="section-intro">
-          The first product is designed around four practical questions: what fits, who is buying, what is trustworthy, and what needs official-source verification?
+          The product keeps practical SME workflow close to the data: fit, buyer, source, documents, and saved follow-up.
         </p>
 
-        <div class="cards-3">
-          <article class="feature-card">
+        <div class="cards-5">
+          <article class="mini-feature">
             <div class="icon-bubble">◎</div>
             <h3>Opportunity-fit scoring</h3>
-            <p>Prioritize public-sector opportunities based on category, service area, timing, briefing risk, source quality, and business-profile fit.</p>
+            <p>Score opportunities against company profile, categories, service keywords, location, deadline, and verification signals.</p>
           </article>
 
-          <article class="feature-card">
+          <article class="mini-feature">
             <div class="icon-bubble">◌</div>
             <h3>Buyer intelligence</h3>
-            <p>Understand active buyers, repeat demand, category patterns, and useful history even when a record is no longer a live opportunity.</p>
+            <p>See buyer activity, repeat demand, category patterns, and signals that help consultants and SMEs prioritize outreach.</p>
           </article>
 
-          <article class="feature-card">
+          <article class="mini-feature">
             <div class="icon-bubble">✓</div>
-            <h3>Source-quality flags</h3>
-            <p>Spot cancelled, duplicate, or mixed-status tender records so users know what to verify on the official issuing authority source before spending time on a bid.</p>
+            <h3>Source-quality checks</h3>
+            <p>Spot missing links, mixed status records, duplicate references, and records that need extra verification.</p>
+          </article>
+
+          <article class="mini-feature">
+            <div class="icon-bubble">□</div>
+            <h3>Official document review</h3>
+            <p>Keep document links visible inside the workflow while preserving the path back to the official issuing source.</p>
+          </article>
+
+          <article class="mini-feature">
+            <div class="icon-bubble">★</div>
+            <h3>Saved opportunity workspace</h3>
+            <p>Build a focused shortlist, remove what no longer matters, and keep decision-ready tenders in one queue.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="how" class="section">
+    <section id="workflow" class="section">
       <div class="container center">
-        <h2>How it works</h2>
+        <h2>From noisy portal lists to a paid workflow.</h2>
         <p class="section-intro">
-          A lightweight intelligence workflow for growing businesses that do not have a full-time bid intelligence team.
+          ProcureSignal does not submit bids for you. It helps your team decide what to review, what to save, and what to verify before acting.
         </p>
 
         <div class="how">
           <article class="step-card">
-            <h3>Create a business profile</h3>
-            <p>Tell us your sector, service areas, capabilities, and tender workflow needs.</p>
+            <h3>Create your business profile</h3>
+            <p>Tell ProcureSignal what you sell, where you work, and what opportunities are worth showing you.</p>
           </article>
 
           <article class="step-card">
-            <h3>Score and classify opportunities</h3>
-            <p>Separate live opportunities, buyer-intelligence records, and not-actionable records with transparent reasons.</p>
+            <h3>Review scored opportunities</h3>
+            <p>Use fit score, deadline, buyer, category, and source-quality signals to prioritize your queue.</p>
           </article>
 
           <article class="step-card">
-            <h3>Act with better context</h3>
-            <p>Use fit scores, buyer signals, and source-quality flags to decide what deserves attention.</p>
+            <h3>Verify and act</h3>
+            <p>Review official documents and confirm addenda, eligibility rules, and submission instructions on the issuing source.</p>
           </article>
         </div>
 
         <div id="trust" class="trust-strip">
-          <div class="shield">🛡</div>
+          <div class="shield">✓</div>
           <div>
-            <h3>Independent intelligence layer. Not an official tender portal.</h3>
+            <h3>Independent product. Not an official government portal.</h3>
             <p>
-              ProcureSignal is independent and is not affiliated with any government entity, issuing buyer, or official tender portal.
-              Users must always verify official tender documents, source links, deadlines, addenda, eligibility rules, and submission instructions on the official issuing authority source before acting.
+              ProcureSignal is independent and not affiliated with any government entity. Verify official tender documents,
+              addenda, deadlines, briefing requirements, eligibility rules, and submission instructions on the official issuing authority source before acting.
             </p>
           </div>
-          <a class="btn btn-ghost" href="https://app.procuresignal.co.za">Open workspace</a>
+          <a class="btn btn-ghost" href="disclaimer.html">Read disclaimer</a>
         </div>
       </div>
     </section>
@@ -1024,13 +721,13 @@
     <section class="cta-section">
       <div class="container">
         <div class="cta-box">
-          <h2>Start using procurement intelligence built for procurement teams.</h2>
+          <h2>Ready to make tender review feel less random?</h2>
           <p class="lead">
-            Create a profile, review scored opportunities, save what matters, and use feedback to improve opportunity-fit recommendations.
+            Create your ProcureSignal account, choose a plan, and start building a focused opportunity workspace for your business.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://app.procuresignal.co.za">Review opportunities</a>
-            <a class="btn btn-ghost" href="#features">Review features</a>
+            <a class="btn btn-primary" href="https://app.procuresignal.co.za">Choose plan</a>
+            <a class="btn btn-ghost" href="https://app.procuresignal.co.za">Open workspace</a>
           </div>
         </div>
       </div>
@@ -1054,19 +751,16 @@
           <div class="logo-word" style="color:#fff">Procure<span>Signal</span></div>
         </a>
         <p style="max-width:440px;color:rgba(255,255,255,.62)">
-          Procurement intelligence that helps growing businesses prioritize public-sector opportunities with better context.
+          Africa-first procurement intelligence that helps growing businesses prioritize public-sector opportunities with better context.
         </p>
       </div>
 
       <div class="footer-disclaimer">
         ProcureSignal is independent and is not affiliated with, endorsed by, sponsored by, or operated by any government entity,
-        official tender portal, issuing authority, or issuing buyer. Information may be
-        incomplete, delayed, amended, duplicated, or inaccurate. Users must verify all tender documents, deadlines, addenda, briefing
-        requirements, eligibility rules, and submission instructions on the official issuing authority source before acting. Opportunity-fit
-        scores are prioritization aids. They do not predict tender wins and do not constitute legal, procurement, tax, financial,
-        or bid-submission advice.
+        official tender portal, issuing authority, or issuing buyer. Information may be incomplete, delayed, amended, duplicated, or inaccurate.
+        Users must verify all tender documents, deadlines, addenda, briefing requirements, eligibility rules, and submission instructions on the official issuing authority source before acting.
+        Opportunity-fit scores are prioritization aids and do not constitute legal, procurement, tax, financial, or bid-submission advice.
 
-        
         <div class="footer-links" style="margin-top:14px">
           <a href="mailto:hello@procuresignal.co.za">General: hello@procuresignal.co.za</a>
           <a href="mailto:privacy@procuresignal.co.za">Privacy: privacy@procuresignal.co.za</a>

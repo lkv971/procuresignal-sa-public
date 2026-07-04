@@ -1,9 +1,9 @@
-# ProcureSignal SA Public Landing Page
+# ProcureSignal Public Landing Page
 
-This repository hosts the public MVP landing page for ProcureSignal SA.
+This repository hosts the public marketing landing page for ProcureSignal.
 
-ProcureSignal SA is an independent procurement intelligence prototype for South African SMEs.
+ProcureSignal is an independent Africa-first procurement intelligence platform for African SMEs, solo operators, and bid/tender consultants.
 
-Live feedback form:
+Primary app CTA:
 
-https://forms.office.com/r/t58qW2mKuR
+https://app.procuresignal.co.za
