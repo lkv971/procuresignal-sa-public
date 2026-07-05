@@ -44,7 +44,7 @@
       background:
         radial-gradient(circle at 12% 2%, rgba(12, 199, 232, 0.16), transparent 26%),
         radial-gradient(circle at 94% 14%, rgba(16, 191, 164, 0.13), transparent 26%),
-        linear-gradient(180deg, #f7fbff 0%, #ffffff 46%, #eef8ff 100%);
+        linear-gradient(180deg, #f7fbff 0%, #ffffff 34%, #eff8ff 68%, #ffffff 100%);
       overflow-x: hidden;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
@@ -130,12 +130,12 @@
     .hero {
       position: relative;
       isolation: isolate;
-      padding: 76px 0 52px;
+      padding: 66px 0 58px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
       gap: clamp(30px, 5vw, 60px);
       align-items: center;
     }
@@ -163,9 +163,10 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(3.1rem, 6.4vw, 6.1rem);
+      font-size: clamp(2.95rem, 5.8vw, 5.25rem);
       line-height: 1.05;
       letter-spacing: -0.075em;
+      overflow-wrap: break-word;
     }
 
     .grad-text {
@@ -174,12 +175,14 @@
       background-clip: text;
       color: transparent;
     }
+    .hero-line { display: inline; }
 
     .lead {
       max-width: 670px;
       color: var(--muted);
       font-size: clamp(1.05rem, 1.8vw, 1.24rem);
       margin: 24px 0 0;
+      overflow-wrap: break-word;
     }
 
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
@@ -200,19 +203,19 @@
 
     .hero-visual {
       position: relative;
-      min-height: 560px;
+      aspect-ratio: 16 / 10.5;
       border-radius: 34px;
       overflow: hidden;
       box-shadow: var(--shadow);
       border: 1px solid rgba(21, 44, 80, 0.12);
-      background: var(--navy);
+      background: #dff1f7;
     }
 
     .hero-visual img {
       width: 100%;
       height: 100%;
-      min-height: 560px;
       object-fit: cover;
+      object-position: 60% center;
     }
 
     .hero-visual::after {
@@ -221,6 +224,16 @@
       inset: 0;
       background: linear-gradient(180deg, rgba(2, 11, 31, 0.02), rgba(2, 11, 31, 0.32));
       pointer-events: none;
+    }
+
+    .visual-ribbon {
+      position: absolute;
+      z-index: 2;
+      top: 22px;
+      left: 22px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
     .preview-card {
@@ -256,31 +269,92 @@
     .mini-pill { padding: 6px 8px; border-radius: 999px; background: #eef6ff; color: #275079; font-size: 0.75rem; font-weight: 850; }
 
     .search-preview {
-      margin-top: 22px;
-      padding: 16px;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.78);
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid rgba(21, 44, 80, 0.10);
-      box-shadow: var(--soft-shadow);
+      box-shadow: 0 22px 60px rgba(3, 27, 62, 0.11);
     }
 
-    .search-bar {
+    .search-label {
+      margin: 0 0 10px;
+      color: #0f6f64;
+      font-size: 0.72rem;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .search-row {
       display: flex;
       align-items: center;
-      gap: 10px;
-      min-height: 48px;
-      border-radius: 999px;
-      padding: 0 16px;
+      gap: 12px;
+      min-height: 58px;
+      border-radius: 22px;
+      padding: 8px;
       background: #fff;
       border: 1px solid rgba(21, 44, 80, 0.10);
+    }
+
+    .search-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #eef6ff;
+      color: var(--blue);
+      font-weight: 950;
+      flex: 0 0 38px;
+    }
+
+    .search-input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      outline: 0;
       color: #6c7b91;
       font-weight: 750;
+      font: inherit;
+      background: transparent;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .search-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border-radius: 16px;
+      padding: 0 16px;
+      text-decoration: none;
+      color: #fff;
+      background: var(--navy);
+      font-size: 0.86rem;
+      font-weight: 950;
+      white-space: nowrap;
     }
 
     .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 
     .section { padding: 72px 0; }
     .section.tight { padding-top: 40px; }
+    .section.product-band {
+      background: linear-gradient(180deg, #ffffff 0%, #eef8ff 100%);
+      border-top: 1px solid rgba(21, 44, 80, 0.08);
+      border-bottom: 1px solid rgba(21, 44, 80, 0.08);
+    }
+    .section.navy-band {
+      color: #fff;
+      background:
+        radial-gradient(circle at 16% 12%, rgba(12, 199, 232, 0.18), transparent 30%),
+        radial-gradient(circle at 86% 22%, rgba(16, 191, 164, 0.14), transparent 28%),
+        linear-gradient(135deg, #061a3a, #020b1f);
+    }
+    .section.navy-band .section-intro,
+    .section.navy-band p { color: rgba(255, 255, 255, 0.72); }
     .center { text-align: center; }
 
     h2 {
@@ -347,6 +421,16 @@
     }
 
     .feature-card p, .step-card p, .mini-feature p { margin: 0; color: var(--muted); }
+    .section.navy-band .feature-card,
+    .section.navy-band .mini-feature {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: none;
+    }
+    .section.navy-band .feature-card h3,
+    .section.navy-band .mini-feature h3 { color: #fff; }
+    .section.navy-band .feature-card p,
+    .section.navy-band .mini-feature p { color: rgba(255, 255, 255, 0.68); }
     .step-card { counter-increment: step; }
     .step-card::before {
       content: counter(step);
@@ -369,6 +453,64 @@
       margin-top: 34px;
     }
 
+    .visual-story {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+      gap: 30px;
+      align-items: center;
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .story-photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      border: 1px solid rgba(21, 44, 80, 0.12);
+      box-shadow: var(--shadow);
+      background: #dff1f7;
+    }
+
+    .story-photo img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .story-note {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border-radius: 22px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.70);
+      box-shadow: 0 20px 58px rgba(2, 11, 31, 0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    .story-copy h2 { margin-bottom: 16px; }
+    .story-copy p { color: var(--muted); margin: 0 0 16px; }
+    .story-list { display: grid; gap: 10px; margin-top: 20px; }
+    .story-list span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #173457;
+      font-weight: 850;
+    }
+    .story-list span::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 0 0 0 6px rgba(16, 191, 164, 0.12);
+      flex: 0 0 10px;
+    }
+
     .workspace-panel {
       border-radius: 30px;
       padding: 22px;
@@ -385,6 +527,120 @@
     }
 
     .workspace-panel.dark p { color: rgba(255, 255, 255, 0.68); }
+
+    .motion-panel {
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      border-radius: 34px;
+      padding: 22px;
+      background: #081833;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 28px 90px rgba(2, 11, 31, 0.22);
+      color: #fff;
+    }
+
+    .motion-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 0 42%, rgba(12, 199, 232, 0.12) 48%, transparent 54% 100%),
+        radial-gradient(circle at 82% 12%, rgba(16, 191, 164, 0.22), transparent 28%);
+      animation: scanFlow 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .motion-header {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .motion-title { margin: 0; font-size: 1.35rem; letter-spacing: -0.04em; }
+    .motion-subtitle { margin: 4px 0 0; color: rgba(255, 255, 255, 0.62); font-size: 0.92rem; }
+
+    .flow-steps {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 12px;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      border-radius: 20px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      animation: liftStep 8s ease-in-out infinite;
+    }
+
+    .flow-step:nth-child(2) { animation-delay: 0.7s; }
+    .flow-step:nth-child(3) { animation-delay: 1.4s; }
+    .flow-step:nth-child(4) { animation-delay: 2.1s; }
+    .flow-step:nth-child(5) { animation-delay: 2.8s; }
+    .flow-step:nth-child(6) { animation-delay: 3.5s; }
+
+    .flow-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: rgba(12, 199, 232, 0.16);
+      color: #9cf4ff;
+      font-weight: 950;
+    }
+
+    .flow-step strong { display: block; line-height: 1.15; }
+    .flow-step span { display: block; margin-top: 4px; color: rgba(255, 255, 255, 0.62); font-size: 0.85rem; }
+    .flow-status {
+      border-radius: 999px;
+      padding: 7px 9px;
+      background: rgba(57, 226, 157, 0.13);
+      color: #9ff8cf;
+      font-size: 0.72rem;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .assistant-preview {
+      margin-top: 18px;
+      border-radius: 24px;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      position: relative;
+      z-index: 1;
+    }
+
+    .assistant-preview h3 { margin: 0; color: #fff; letter-spacing: -0.03em; }
+    .assistant-preview p { margin: 9px 0 0; color: rgba(255, 255, 255, 0.70); }
+
+    @keyframes scanFlow {
+      0%, 100% { transform: translateX(-18%); opacity: 0.54; }
+      50% { transform: translateX(18%); opacity: 0.9; }
+    }
+
+    @keyframes liftStep {
+      0%, 100% { transform: translateY(0); border-color: rgba(255, 255, 255, 0.12); }
+      50% { transform: translateY(-3px); border-color: rgba(12, 199, 232, 0.34); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .motion-panel::before,
+      .flow-step { animation: none; }
+      .btn { transition: none; }
+    }
 
     .metric-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
     .metric {
@@ -436,6 +692,34 @@
     .trust-strip h3 { margin: 0 0 4px; letter-spacing: -0.03em; }
     .trust-strip p { margin: 0; color: var(--muted); }
 
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+      text-align: left;
+    }
+
+    .proof-card {
+      min-height: 220px;
+      border-radius: 28px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid rgba(21, 44, 80, 0.10);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .proof-card.dark-proof {
+      color: #fff;
+      background:
+        radial-gradient(circle at 82% 15%, rgba(12, 199, 232, 0.18), transparent 34%),
+        linear-gradient(135deg, #061a3a, #020b1f);
+    }
+
+    .proof-card h3 { margin: 0 0 10px; letter-spacing: -0.03em; }
+    .proof-card p { margin: 0; color: var(--muted); }
+    .proof-card.dark-proof p { color: rgba(255, 255, 255, 0.68); }
+
     .cta-section { padding: 38px 0 82px; }
     .cta-box {
       border-radius: 34px;
@@ -466,28 +750,49 @@
     .footer-links a { color: rgba(255, 255, 255, 0.78); text-decoration: none; }
 
     @media (max-width: 1100px) {
-      .hero-grid, .workspace, .cards-5, .footer-grid, .trust-strip { grid-template-columns: 1fr; }
+      .hero-grid, .workspace, .visual-story, .cards-5, .proof-grid, .footer-grid, .trust-strip { grid-template-columns: 1fr; }
       .cards-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .hero-visual { min-height: 520px; }
-      .hero-visual img { min-height: 520px; }
+      .hero-visual { aspect-ratio: 16 / 9; }
+      .story-copy { order: -1; }
     }
 
     @media (max-width: 820px) {
+      .container { width: min(1180px, calc(100% - 56px)); max-width: calc(100vw - 56px); }
       .nav { align-items: flex-start; flex-direction: column; padding: 16px 0; }
       .navlinks { flex-wrap: wrap; gap: 14px; }
-      .nav .btn { width: 100%; }
+      .nav .btn { width: min(100%, 340px); }
+      h1 {
+        font-size: clamp(1.95rem, 6.8vw, 2.15rem);
+        line-height: 1.08;
+        letter-spacing: -0.045em;
+        max-width: calc(100vw - 56px);
+      }
+      .hero-line { display: block; }
+      .lead, .search-preview { max-width: calc(100vw - 56px); }
+      .lead { font-size: 0.98rem; }
+      .hero-actions,
+      .trust-row,
+      .lead,
+      .search-preview,
+      h1 { width: min(100%, 340px); }
       .cards-3, .how { grid-template-columns: 1fr; }
       .opportunity-preview { grid-template-columns: 1fr; }
+      .search-row { align-items: stretch; flex-direction: column; border-radius: 24px; }
+      .search-icon { display: none; }
+      .search-input { min-height: 44px; padding: 0 8px; }
+      .search-cta { width: 100%; }
+      .flow-step { grid-template-columns: 40px 1fr; }
+      .flow-status { grid-column: 2; width: fit-content; }
     }
 
     @media (max-width: 620px) {
-      .container { width: min(100% - 28px, 1180px); }
+      .container { width: min(1180px, calc(100% - 56px)); }
       .hero { padding-top: 48px; }
-      h1 { font-size: clamp(2.8rem, 15.5vw, 4.2rem); letter-spacing: -0.065em; }
+      h1 { font-size: clamp(1.9rem, 8.2vw, 2.1rem); letter-spacing: -0.035em; }
       .lead { font-size: 1.02rem; }
       .hero-actions .btn, .cta-box .btn { width: 100%; }
-      .hero-visual { border-radius: 26px; min-height: 520px; }
-      .hero-visual img { min-height: 360px; object-position: 58% center; }
+      .hero-visual { border-radius: 26px; aspect-ratio: 4 / 5; }
+      .hero-visual img { object-position: 68% center; }
       .preview-card {
         position: relative;
         left: auto;
@@ -499,6 +804,10 @@
       }
       .score-pill { width: fit-content; }
       .cards-5, .metric-grid { grid-template-columns: 1fr; }
+      .story-photo img { aspect-ratio: 4 / 4.6; }
+      .story-note { position: static; margin: -26px 12px 12px; }
+      .motion-panel { min-height: auto; padding: 16px; }
+      .motion-header { align-items: flex-start; flex-direction: column; }
       .section { padding: 54px 0; }
       h2 { font-size: clamp(2rem, 10vw, 3rem); }
     }
@@ -539,11 +848,32 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow"><span class="dot"></span> Africa-first procurement intelligence</div>
-          <h1>Find the public-sector opportunities <span class="grad-text">worth acting on.</span></h1>
+          <h1>
+            <span class="hero-line">Find the public-sector</span>
+            <span class="hero-line">opportunities</span>
+            <span class="hero-line grad-text">worth acting on.</span>
+          </h1>
           <p class="lead">
             ProcureSignal helps African businesses and tender consultants cut through noisy tender lists with fit scoring,
             buyer intelligence, source-quality checks, official document review, and a saved opportunity workspace.
           </p>
+
+          <div class="search-preview" aria-label="Example opportunity search preview">
+            <p class="search-label">Example workspace search</p>
+            <div class="search-row" role="search">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input class="search-input" value="facilities maintenance with documents closing soon" aria-label="Example search query" readonly />
+              <a class="search-cta" href="https://app.procuresignal.co.za">Search workspace</a>
+            </div>
+            <div class="filter-row">
+              <span class="mini-pill">Facilities</span>
+              <span class="mini-pill">Security</span>
+              <span class="mini-pill">Construction</span>
+              <span class="mini-pill">Closing soon</span>
+              <span class="mini-pill">Documents available</span>
+              <span class="mini-pill">High fit</span>
+            </div>
+          </div>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://app.procuresignal.co.za">Create account →</a>
@@ -555,19 +885,13 @@
             <span class="trust-pill">Official-source reminders</span>
             <span class="trust-pill">Built for paid procurement workflow</span>
           </div>
-
-          <div class="search-preview" aria-label="Opportunity search preview">
-            <div class="search-bar">Search by service, buyer, category, deadline, or region</div>
-            <div class="filter-row">
-              <span class="mini-pill">High fit</span>
-              <span class="mini-pill">Closing soon</span>
-              <span class="mini-pill">Documents available</span>
-              <span class="mini-pill">Needs review</span>
-            </div>
-          </div>
         </div>
 
         <figure class="hero-visual">
+          <div class="visual-ribbon" aria-hidden="true">
+            <span class="mini-pill">Profile matched</span>
+            <span class="mini-pill">Document-first review</span>
+          </div>
           <img src="assets/procuresignal-africa-sme-team.png" alt="African business owners and procurement team reviewing opportunities together in a modern workspace" />
           <figcaption class="preview-card">
             <div class="preview-top">
@@ -593,6 +917,38 @@
       </div>
     </section>
 
+    <section class="section product-band">
+      <div class="container">
+        <div class="visual-story">
+          <figure class="story-photo">
+            <img src="assets/procuresignal-procurement-team-review.jpg" alt="African procurement team reviewing tender documents and a dashboard together" />
+            <figcaption class="story-note">
+              <div class="preview-kicker">Procurement review context</div>
+              <strong>Designed for the moment before your team commits bid time.</strong>
+            </figcaption>
+          </figure>
+
+          <div class="story-copy">
+            <div class="eyebrow"><span class="dot"></span> Built for practical tender review</div>
+            <h2>Know what to check before you price, prepare, or submit.</h2>
+            <p>
+              The public site should not feel like another directory. ProcureSignal positions tender review as a paid workspace:
+              fit, source confidence, official documents, buyer signals, and saved follow-up in one flow.
+            </p>
+            <div class="story-list" aria-label="ProcureSignal review checks">
+              <span>Check whether the tender fits your services and capacity.</span>
+              <span>Review official documents before relying on summaries.</span>
+              <span>Keep promising opportunities in a focused workspace.</span>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://app.procuresignal.co.za">Activate workspace</a>
+              <a class="btn btn-ghost" href="#workflow">See workflow</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="product" class="section tight">
       <div class="container center">
         <h2>A cleaner workspace for tender decisions.</h2>
@@ -602,18 +958,56 @@
         </p>
 
         <div class="workspace">
-          <article class="workspace-panel dark">
-            <p class="preview-kicker">Opportunity queue</p>
-            <h3 style="margin:8px 0 0;font-size:2rem;letter-spacing:-.05em;line-height:1.05">Prioritize the work that can actually fit.</h3>
-            <p style="margin-top:14px">
-              Use profile scoring, deadline context, buyer patterns, and verification signals before your team spends hours on low-fit tenders.
-            </p>
-            <div class="metric-grid">
-              <div class="metric"><strong>84</strong><span>fit score example</span></div>
-              <div class="metric"><strong>12</strong><span>days to close</span></div>
-              <div class="metric"><strong>3</strong><span>documents to review</span></div>
-              <div class="metric"><strong>1</strong><span>source flag</span></div>
+          <article class="motion-panel" aria-label="Animated ProcureSignal workflow preview">
+            <div class="motion-header">
+              <div>
+                <p class="preview-kicker">Workspace flow</p>
+                <h3 class="motion-title">From profile to saved shortlist.</h3>
+                <p class="motion-subtitle">A product preview of the decision path inside ProcureSignal.</p>
+              </div>
+              <span class="score-pill">84 fit score</span>
             </div>
+
+            <div class="flow-steps">
+              <div class="flow-step">
+                <div class="flow-icon">1</div>
+                <div><strong>Company profile</strong><span>Facilities, cleaning, maintenance, and regional preferences.</span></div>
+                <div class="flow-status">Ready</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-icon">2</div>
+                <div><strong>Matched opportunities</strong><span>Relevant tenders rise above noisy portal lists.</span></div>
+                <div class="flow-status">3 high priority</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-icon">3</div>
+                <div><strong>Fit score</strong><span>Category, keyword, deadline, and source signals in one view.</span></div>
+                <div class="flow-status">High fit</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-icon">4</div>
+                <div><strong>Source checks</strong><span>Flags help your team verify before spending bid time.</span></div>
+                <div class="flow-status">Needs review</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-icon">5</div>
+                <div><strong>Official documents</strong><span>Document links stay visible before the official-source check.</span></div>
+                <div class="flow-status">Available</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-icon">6</div>
+                <div><strong>Saved workspace</strong><span>Keep the tenders worth acting on in a focused queue.</span></div>
+                <div class="flow-status">Saved</div>
+              </div>
+            </div>
+
+            <aside class="assistant-preview" aria-label="Future workspace intelligence preview">
+              <h3>Workspace intelligence preview</h3>
+              <p>
+                Based on your company profile, you have 3 high-priority opportunities to review. Start with the one
+                closing soonest and check official documents before acting.
+              </p>
+            </aside>
           </article>
 
           <div class="workspace-panel">
@@ -633,13 +1027,18 @@
                 <h3>Training services from a repeat public buyer</h3>
                 <p>Buyer history suggests useful demand patterns even before bid decisions.</p>
               </article>
+              <article class="queue-card">
+                <div class="queue-row"><span class="mini-pill">Documents</span><strong>Review</strong></div>
+                <h3>Construction and works tender pack</h3>
+                <p>Document-first workflow keeps the official-source path clear before pricing decisions.</p>
+              </article>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section">
+    <section id="features" class="section navy-band">
       <div class="container center">
         <h2>Built around the moments that decide whether a tender is worth your time.</h2>
         <p class="section-intro">
@@ -714,6 +1113,32 @@
             </p>
           </div>
           <a class="btn btn-ghost" href="disclaimer.html">Read disclaimer</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section product-band">
+      <div class="container center">
+        <h2>Built for procurement teams that need faster tender review.</h2>
+        <p class="section-intro">
+          No fake quotes, no inflated claims. ProcureSignal focuses the paid workflow on the checks teams should complete before bidding.
+        </p>
+
+        <div class="proof-grid">
+          <article class="proof-card">
+            <h3>What teams can check before bidding</h3>
+            <p>Scope, deadline, briefing date, buyer, category fit, source confidence, and official documents before committing bid effort.</p>
+          </article>
+
+          <article class="proof-card dark-proof">
+            <h3>Why paid teams use a workspace</h3>
+            <p>Shortlist promising tenders, remove distractions, and keep official-source verification close to the decision.</p>
+          </article>
+
+          <article class="proof-card">
+            <h3>Ready for real proof later</h3>
+            <p>This section can hold verified customer outcomes when they exist. Until then, the page stays honest and product-led.</p>
+          </article>
         </div>
       </div>
     </section>
