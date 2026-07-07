@@ -117,7 +117,7 @@
       border: 1px solid transparent;
       font-weight: 900;
       text-decoration: none;
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
       white-space: nowrap;
       transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
     }
@@ -130,13 +130,13 @@
     .hero {
       position: relative;
       isolation: isolate;
-      padding: 66px 0 58px;
+      padding: 54px 0 34px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
-      gap: clamp(30px, 5vw, 60px);
+      grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+      gap: clamp(28px, 4.5vw, 54px);
       align-items: center;
     }
 
@@ -163,9 +163,9 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.95rem, 5.8vw, 5.25rem);
-      line-height: 1.05;
-      letter-spacing: -0.075em;
+      font-size: clamp(2.55rem, 4.6vw, 4.15rem);
+      line-height: 1.08;
+      letter-spacing: 0;
       overflow-wrap: break-word;
     }
 
@@ -181,13 +181,13 @@
       max-width: 670px;
       color: var(--muted);
       font-size: clamp(1.05rem, 1.8vw, 1.24rem);
-      margin: 24px 0 0;
+      margin: 18px 0 0;
       overflow-wrap: break-word;
     }
 
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
 
-    .trust-row { margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .trust-row { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
     .trust-pill {
       display: inline-flex;
       align-items: center;
@@ -203,8 +203,8 @@
 
     .hero-visual {
       position: relative;
-      aspect-ratio: 16 / 10.5;
-      border-radius: 34px;
+      aspect-ratio: 16 / 10;
+      border-radius: 30px;
       overflow: hidden;
       box-shadow: var(--shadow);
       border: 1px solid rgba(21, 44, 80, 0.12);
@@ -222,15 +222,15 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(2, 11, 31, 0.02), rgba(2, 11, 31, 0.32));
+      background: linear-gradient(180deg, rgba(2, 11, 31, 0.01), rgba(2, 11, 31, 0.18));
       pointer-events: none;
     }
 
     .visual-ribbon {
       position: absolute;
       z-index: 2;
-      top: 22px;
-      left: 22px;
+      top: 18px;
+      left: 18px;
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
@@ -269,16 +269,25 @@
     .mini-pill { padding: 6px 8px; border-radius: 999px; background: #eef6ff; color: #275079; font-size: 0.75rem; font-weight: 850; }
 
     .search-preview {
-      margin-top: 30px;
-      padding: 20px;
-      border-radius: 30px;
+      grid-column: 1 / -1;
+      margin-top: 4px;
+      padding: clamp(16px, 2.5vw, 24px);
+      border-radius: 28px;
       background: rgba(255, 255, 255, 0.9);
       border: 1px solid rgba(21, 44, 80, 0.10);
-      box-shadow: 0 22px 60px rgba(3, 27, 62, 0.11);
+      box-shadow: 0 18px 54px rgba(3, 27, 62, 0.10);
+    }
+
+    .search-preview-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
     }
 
     .search-label {
-      margin: 0 0 10px;
+      margin: 0;
       color: #0f6f64;
       font-size: 0.72rem;
       font-weight: 950;
@@ -286,11 +295,23 @@
       text-transform: uppercase;
     }
 
+    .demo-note {
+      border-radius: 999px;
+      border: 1px solid rgba(21, 44, 80, 0.10);
+      background: #f6f9fc;
+      color: #61718c;
+      font-size: 0.78rem;
+      font-weight: 850;
+      padding: 7px 10px;
+      white-space: nowrap;
+    }
+
     .search-row {
-      display: flex;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: center;
       gap: 12px;
-      min-height: 58px;
+      min-height: 60px;
       border-radius: 22px;
       padding: 8px;
       background: #fff;
@@ -310,7 +331,6 @@
     }
 
     .search-input {
-      width: 100%;
       min-width: 0;
       border: 0;
       outline: 0;
@@ -320,6 +340,7 @@
       background: transparent;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .search-cta {
@@ -339,8 +360,60 @@
 
     .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 
+    .workspace-snapshot {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+      gap: 14px;
+    }
+
+    .workspace-result,
+    .workspace-checks {
+      border-radius: 22px;
+      border: 1px solid rgba(21, 44, 80, 0.10);
+      background: #f8fbff;
+      padding: 16px;
+    }
+
+    .result-title {
+      margin-top: 5px;
+      color: var(--ink);
+      font-weight: 950;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .result-copy {
+      margin: 8px 0 0;
+      color: #61718c;
+      font-size: 0.94rem;
+    }
+
+    .workspace-checks {
+      display: grid;
+      gap: 10px;
+      background: #020b1f;
+      color: #fff;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.88rem;
+      font-weight: 850;
+    }
+
+    .check-row strong { color: #0cc7e8; }
+
     .section { padding: 72px 0; }
     .section.tight { padding-top: 40px; }
+    .hero + .product-band { padding-top: 30px; }
     .section.product-band {
       background: linear-gradient(180deg, #ffffff 0%, #eef8ff 100%);
       border-top: 1px solid rgba(21, 44, 80, 0.08);
@@ -456,9 +529,9 @@
     .visual-story {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
-      gap: 30px;
-      align-items: center;
-      margin-top: 40px;
+      gap: 28px;
+      align-items: start;
+      margin-top: 0;
       text-align: left;
     }
 
@@ -750,7 +823,7 @@
     .footer-links a { color: rgba(255, 255, 255, 0.78); text-decoration: none; }
 
     @media (max-width: 1100px) {
-      .hero-grid, .workspace, .visual-story, .cards-5, .proof-grid, .footer-grid, .trust-strip { grid-template-columns: 1fr; }
+      .hero-grid, .workspace, .visual-story, .cards-5, .proof-grid, .footer-grid, .trust-strip, .workspace-snapshot { grid-template-columns: 1fr; }
       .cards-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .hero-visual { aspect-ratio: 16 / 9; }
       .story-copy { order: -1; }
@@ -764,7 +837,7 @@
       h1 {
         font-size: clamp(1.95rem, 6.8vw, 2.15rem);
         line-height: 1.08;
-        letter-spacing: -0.045em;
+        letter-spacing: 0;
         max-width: calc(100vw - 56px);
       }
       .hero-line { display: block; }
@@ -773,26 +846,32 @@
       .hero-actions,
       .trust-row,
       .lead,
-      .search-preview,
       h1 { width: min(100%, 340px); }
+      .search-preview { width: 100%; }
       .cards-3, .how { grid-template-columns: 1fr; }
       .opportunity-preview { grid-template-columns: 1fr; }
-      .search-row { align-items: stretch; flex-direction: column; border-radius: 24px; }
+      .search-preview-top { align-items: flex-start; flex-direction: column; }
+      .demo-note { white-space: normal; }
+      .search-row { grid-template-columns: 1fr; align-items: stretch; border-radius: 24px; }
       .search-icon { display: none; }
-      .search-input { min-height: 44px; padding: 0 8px; }
+      .search-input { min-height: 44px; padding: 0 8px; white-space: normal; }
       .search-cta { width: 100%; }
+      .workspace-result,
+      .workspace-checks { padding: 13px; border-radius: 18px; }
+      .result-copy { font-size: 0.9rem; }
+      .check-row { padding: 8px 10px; font-size: 0.82rem; }
       .flow-step { grid-template-columns: 40px 1fr; }
       .flow-status { grid-column: 2; width: fit-content; }
     }
 
     @media (max-width: 620px) {
       .container { width: min(1180px, calc(100% - 56px)); }
-      .hero { padding-top: 48px; }
-      h1 { font-size: clamp(1.9rem, 8.2vw, 2.1rem); letter-spacing: -0.035em; }
+      .hero { padding: 40px 0 28px; }
+      h1 { font-size: clamp(1.9rem, 8.2vw, 2.1rem); letter-spacing: 0; }
       .lead { font-size: 1.02rem; }
       .hero-actions .btn, .cta-box .btn { width: 100%; }
-      .hero-visual { border-radius: 26px; aspect-ratio: 4 / 5; }
-      .hero-visual img { object-position: 68% center; }
+      .hero-visual { border-radius: 24px; aspect-ratio: 4 / 3; }
+      .hero-visual img { object-position: 60% center; }
       .preview-card {
         position: relative;
         left: auto;
@@ -839,7 +918,7 @@
         <a href="#trust">Trust</a>
       </nav>
 
-      <a class="btn btn-primary" href="https://app.procuresignal.co.za">Create account</a>
+      <a class="btn btn-primary" href="https://app.procuresignal.co.za">Open workspace</a>
     </div>
   </header>
 
@@ -849,34 +928,17 @@
         <div>
           <div class="eyebrow"><span class="dot"></span> Africa-first procurement intelligence</div>
           <h1>
-            <span class="hero-line">Find the public-sector</span>
-            <span class="hero-line">opportunities</span>
-            <span class="hero-line grad-text">worth acting on.</span>
+            <span class="hero-line">Find tenders</span>
+            <span class="hero-line">worth your team's</span>
+            <span class="hero-line grad-text">time.</span>
           </h1>
           <p class="lead">
-            ProcureSignal helps African businesses and tender consultants cut through noisy tender lists with fit scoring,
-            buyer intelligence, source-quality checks, official document review, and a saved opportunity workspace.
+            ProcureSignal turns noisy public opportunity lists into a focused workspace for opportunity-fit scoring,
+            buyer intelligence, source-quality checks, official document review, and saved follow-up.
           </p>
 
-          <div class="search-preview" aria-label="Example opportunity search preview">
-            <p class="search-label">Example workspace search</p>
-            <div class="search-row" role="search">
-              <span class="search-icon" aria-hidden="true">⌕</span>
-              <input class="search-input" value="facilities maintenance with documents closing soon" aria-label="Example search query" readonly />
-              <a class="search-cta" href="https://app.procuresignal.co.za">Search workspace</a>
-            </div>
-            <div class="filter-row">
-              <span class="mini-pill">Facilities</span>
-              <span class="mini-pill">Security</span>
-              <span class="mini-pill">Construction</span>
-              <span class="mini-pill">Closing soon</span>
-              <span class="mini-pill">Documents available</span>
-              <span class="mini-pill">High fit</span>
-            </div>
-          </div>
-
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://app.procuresignal.co.za">Create account →</a>
+            <a class="btn btn-primary" href="https://app.procuresignal.co.za">Open workspace</a>
             <a class="btn btn-ghost" href="#product">See the workspace</a>
           </div>
 
@@ -893,27 +955,38 @@
             <span class="mini-pill">Document-first review</span>
           </div>
           <img src="assets/procuresignal-africa-sme-team.png" alt="African business owners and procurement team reviewing opportunities together in a modern workspace" />
-          <figcaption class="preview-card">
-            <div class="preview-top">
-              <div>
-                <div class="preview-kicker">Example workspace preview</div>
-                <div class="preview-title">Facilities tender matched to your company profile</div>
-              </div>
-              <span class="score-pill">84 fit score</span>
-            </div>
-            <div class="opportunity-preview">
-              <div>
-                Review scope, buyer, deadline, source checks, and official documents before deciding whether to bid.
-                <div class="preview-meta">
-                  <span class="mini-pill">Buyer signals</span>
-                  <span class="mini-pill">Saved workspace</span>
-                  <span class="mini-pill">Official documents</span>
-                </div>
-              </div>
-              <a class="btn btn-dark" href="https://app.procuresignal.co.za">Open workspace</a>
-            </div>
-          </figcaption>
         </figure>
+
+        <div class="search-preview" aria-label="Simulated ProcureSignal workspace preview">
+          <div class="search-preview-top">
+            <p class="search-label">Simulated workspace preview</p>
+            <span class="demo-note">Not a live search on this page</span>
+          </div>
+          <div class="search-row" aria-label="Example query routed to the ProcureSignal app">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <span class="search-input">facilities maintenance with documents closing soon</span>
+            <a class="search-cta" href="https://app.procuresignal.co.za">Review opportunities</a>
+          </div>
+          <div class="workspace-snapshot">
+            <article class="workspace-result">
+              <div class="preview-kicker">Opportunity fit signal</div>
+              <div class="result-title">Facilities tender matched to your profile</div>
+              <p class="result-copy">
+                Check fit, buyer, deadline, source quality, and official documents before deciding whether to bid.
+              </p>
+              <div class="preview-meta">
+                <span class="mini-pill">84 fit score</span>
+                <span class="mini-pill">Documents available</span>
+                <span class="mini-pill">Closing soon</span>
+              </div>
+            </article>
+            <aside class="workspace-checks" aria-label="ProcureSignal review signals">
+              <div class="check-row"><span>Buyer intelligence</span><strong>Ready</strong></div>
+              <div class="check-row"><span>Source-quality checks</span><strong>Clean</strong></div>
+              <div class="check-row"><span>Official documents</span><strong>Verify</strong></div>
+            </aside>
+          </div>
+        </div>
       </div>
     </section>
 
