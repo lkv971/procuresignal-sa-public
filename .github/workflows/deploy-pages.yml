@@ -1,10 +1,12 @@
-name: Deploy GitHub Pages
+name: Legacy Public Rollback
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+    inputs:
+      confirm_legacy_rollback:
+        description: Type ROLLBACK to deploy the preserved pre-consolidation site
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -12,12 +14,13 @@ permissions:
   id-token: write
 
 concurrency:
-  group: github-pages
-  cancel-in-progress: true
+  group: procuresignal-legacy-public-rollback
+  cancel-in-progress: false
 
 jobs:
   deploy:
-    name: Deploy static site
+    name: Deploy preserved legacy site
+    if: github.event.inputs.confirm_legacy_rollback == 'ROLLBACK'
     runs-on: ubuntu-latest
     env:
       PAGES_ARTIFACT_NAME: "github-pages-${{ github.run_id }}-${{ github.run_attempt }}"
@@ -27,6 +30,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: legacy-public-rollback-2026-07-19
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
