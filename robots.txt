@@ -1,0 +1,41 @@
+User-Agent: *
+Allow: /
+Disallow: /account
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /billing
+Disallow: /buyers
+Disallow: /dashboard
+Disallow: /login
+Disallow: /onboarding
+Disallow: /opportunities
+Disallow: /saved
+Disallow: /signup
+Disallow: /source-quality
+
+User-Agent: Googlebot
+User-Agent: Bingbot
+User-Agent: OAI-SearchBot
+Allow: /
+Disallow: /account
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /billing
+Disallow: /buyers
+Disallow: /dashboard
+Disallow: /login
+Disallow: /onboarding
+Disallow: /opportunities
+Disallow: /saved
+Disallow: /signup
+Disallow: /source-quality
+
+User-Agent: GPTBot
+User-Agent: Google-Extended
+User-Agent: CCBot
+Disallow: /
+
+Host: https://procuresignal.co.za
+Sitemap: https://procuresignal.co.za/sitemap.xml

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="420" viewBox="0 0 1400 420" role="img" aria-label="ProcureSignal horizontal logo dark">
+  <defs>
+    <linearGradient id="bg" x1="50" y1="38" x2="242" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#07316e"/>
+      <stop offset="0.52" stop-color="#1557ff"/>
+      <stop offset="1" stop-color="#10bfa4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="420" fill="#020b1f"/>
+  <g transform="translate(78 70)">
+    <rect x="0" y="0" width="250" height="250" rx="78" fill="url(#bg)"/>
+    <g transform="translate(42 38) scale(2.62)" color="#ffffff">
+      
+<path d="M11 45L22.5 34L32.5 40.5L52 20" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M52 20H40.5M52 20V31.5" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 23C22 14.5 36 12 48 18" stroke="currentColor" stroke-opacity=".40" stroke-width="4" stroke-linecap="round"/>
+<path d="M17 51C29 57 44 53 53 42" stroke="currentColor" stroke-opacity=".25" stroke-width="4" stroke-linecap="round"/>
+<circle cx="11" cy="45" r="4.2" fill="currentColor"/>
+<circle cx="22.5" cy="34" r="4.2" fill="currentColor"/>
+<circle cx="32.5" cy="40.5" r="4.2" fill="currentColor"/>
+
+    </g>
+  </g>
+  <g font-family="Inter, Arial, Helvetica, sans-serif" font-weight="900" letter-spacing="-9">
+    <text x="380" y="235" font-size="112" fill="#ffffff">Procure</text>
+    <text x="786" y="235" font-size="112" fill="#0cc7e8">Signal</text>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+# ProcureSignal
+
+> ProcureSignal is an independent Africa-first procurement intelligence product for SMEs and tender consultants. It is not affiliated with any government entity or official tender portal.
+
+## Public content
+
+- [ProcureSignal](https://procuresignal.co.za/)
+- [Pricing](https://procuresignal.co.za/pricing)
+- [Privacy Notice](https://procuresignal.co.za/privacy)
+- [Terms and Disclaimer](https://procuresignal.co.za/terms)
+
+## Product facts
+
+- ProcureSignal helps users prioritize public-sector opportunities using explainable fit, buyer, source-quality, official-link, and deadline signals.
+- The product currently has 21 configured live procurement sources. Coverage is partial and source-specific.
+- ProcureSignal analysis is decision support, not an official procurement record, eligibility decision, award guarantee, or bid-submission service.
+- Users must verify documents, addenda, deadlines, briefing requirements, eligibility rules, and submission instructions on the official issuing authority source.
+
+## Access boundary
+
+Account, billing, workspace, saved opportunity, protected document, internal API, source telemetry, and orchestration routes are private or operational surfaces and are not public citation targets.
