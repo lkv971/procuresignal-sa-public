@@ -4,10 +4,10 @@
 
 ## Public content
 
-- [ProcureSignal](https://procuresignal.co.za/)
-- [Pricing](https://procuresignal.co.za/pricing)
-- [Privacy Notice](https://procuresignal.co.za/privacy)
-- [Terms and Disclaimer](https://procuresignal.co.za/terms)
+- [ProcureSignal](https://procuresignal.io/)
+- [Pricing](https://procuresignal.io/pricing)
+- [Privacy Notice](https://procuresignal.io/privacy)
+- [Terms and Disclaimer](https://procuresignal.io/terms)
 
 ## Product facts
 

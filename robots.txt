@@ -37,5 +37,5 @@ User-Agent: Google-Extended
 User-Agent: CCBot
 Disallow: /
 
-Host: https://procuresignal.co.za
-Sitemap: https://procuresignal.co.za/sitemap.xml
+Host: https://procuresignal.io
+Sitemap: https://procuresignal.io/sitemap.xml
